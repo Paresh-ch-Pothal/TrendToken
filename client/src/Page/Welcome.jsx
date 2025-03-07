@@ -4,7 +4,7 @@ const Welcome = () => {
   const [message, setMessage] = useState("Loading...");
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL || "http://localhost:5000/")
+    fetch(import.meta.env.VITE_API_URL)
       .then((response) => response.text())
       .then((data) => setMessage(data))
       .catch(() => setMessage("Error fetching data"));
