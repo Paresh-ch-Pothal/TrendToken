@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 const ProductPage = () => {
 
-    const host = import.meta.env.VITE_API_URL || "http://localhost:5000/";
+    const host = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     const [product, setProduct] = useState([])
     const { id } = useParams();

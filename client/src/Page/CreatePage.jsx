@@ -3,7 +3,7 @@ import "../CSS/createpage.css";
 
 const CreateProduct = () => {
 
-    const host = import.meta.env.VITE_API_URL || "http://localhost:5000/";
+    const host = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
     const [formData, setFormData] = useState({
         name: "",
