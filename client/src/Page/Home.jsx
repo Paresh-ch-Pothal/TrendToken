@@ -150,7 +150,7 @@ import "../CSS/home.css";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const host = "http://localhost:5000";
+  const host = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const [tags, setTags] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -209,24 +209,6 @@ const Home = () => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
-  const [wholeProduct, setWholeProduct] = useState([])
-
-  const showProduct = async (id) => {
-    try {
-      const response = await fetch(`${host}/product/getWholeProduct/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      const data = await response.json()
-      setWholeProduct(data.product)
-
-    } catch (error) {
-
-    }
-  }
 
   const navigate = useNavigate()
   const visitProductPage = (id) => {
