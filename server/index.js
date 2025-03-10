@@ -2,10 +2,11 @@ const express=require('express');
 const app=express();
 const cors=require('cors');
 const connectDB=require("./connection") // Importing the database connection
+const productRoutes=require("./routes/product")
 require("dotenv").config();
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173" }));
 
 // Connect to MongoDB
 connectDB();
@@ -14,6 +15,8 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("Server is running...");
 });
+
+app.use("/product",productRoutes)
 
 // Start the server
 const PORT = process.env.PORT || 5000;

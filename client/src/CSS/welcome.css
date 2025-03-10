@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.welcomeContainer {
+  position: relative;
+  height: 90vh;
+  background: url('https://img.freepik.com/premium-photo/colorful-illustration-mountain-landscape-with-river-mountains-background_872754-1233.jpg') center/cover no-repeat;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Gradient Overlay for smooth effect */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  z-index: 0;
+}
+
+/* Glassmorphism Effect */
+.content {
+  width: 60%;
+  z-index: 2;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Heading with Animated Gradient */
+.welcomeText {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #5fffcc, #fe7bb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 1.5s infinite alternate;
+}
+
+/* Different Text Colors */
+.primaryText {
+  color: #ff4081; /* Pink */
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.secondaryText {
+  color: #4caf50; /* Green */
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.highlightText {
+  color: #03a9f4; /* Blue */
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Call-to-Action Button */
+.ctaButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #5f7aff, #feb47b);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(255, 126, 95, 0.6);
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 8px rgba(255, 126, 95, 0.6);
+  }
+  to {
+    text-shadow: 0 0 16px rgba(255, 180, 123, 0.8);
+  }
+}
+
+/* 📱 Responsive Media Queries */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .content {
+    width: 80%;
+    padding: 30px;
+  }
+  
+  .welcomeText {
+    font-size: 2.5rem;
+  }
+
+  .primaryText,
+  .secondaryText,
+  .highlightText {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .welcomeText {
+    font-size: 2rem;
+  }
+
+  .primaryText,
+  .secondaryText,
+  .highlightText {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .welcomeText {
+    font-size: 1.8rem;
+  }
+
+  .primaryText,
+  .secondaryText,
+  .highlightText {
+    font-size: 0.8rem;
+  }
+
+  .ctaButton {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+}

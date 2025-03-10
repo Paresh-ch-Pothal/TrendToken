@@ -1,0 +1,61 @@
+.privacy-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Title Styling */
+.privacy-title {
+    font-size: 32px;
+    color: #28a745;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Subtitle Styling */
+.privacy-subtitle {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Paragraph Styling */
+.privacy-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* List Styling */
+.privacy-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.privacy-list-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .privacy-container {
+        padding: 15px;
+    }
+
+    .privacy-title {
+        font-size: 26px;
+    }
+
+    .privacy-subtitle {
+        font-size: 22px;
+    }
+
+    .privacy-text, 
+    .privacy-list-item {
+        font-size: 16px;
+    }
+}
