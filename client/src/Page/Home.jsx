@@ -270,7 +270,8 @@ const Home = () => {
                   </button>
                 ))}
               </div>
-              <p className="desc">{product.description}</p>
+              <p className="desc">{product.description.slice(0, 30)}...</p>
+
               <div className="btn-grp">
                 <button className="buy-btn" onClick={() => handleBuyNow(product.buyLink)}>
                   Buy Now
