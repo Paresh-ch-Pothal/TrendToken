@@ -8,7 +8,7 @@ const app = express();
 
 // ✅ Fix: Move CORS middleware to the top
 app.use(cors({
-  origin: ['https://trendtoken.vercel.app'],
+  origin: ['https://trendtoken.vercel.app','http://localhost:5173'],
   methods: ["POST" , "GET"],
   credentials: true
 }));
