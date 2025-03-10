@@ -8,7 +8,6 @@ const ProductPage = () => {
 
     const [product, setProduct] = useState([])
     const { id } = useParams();
-    console.log(id)
 
     const getWholeProduct = async () => {
         try {
@@ -22,7 +21,7 @@ const ProductPage = () => {
             console.log(data)
             setProduct(data.product)
         } catch (error) {
-
+            console.log(error)
         }
     }
 

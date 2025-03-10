@@ -6,7 +6,14 @@ const productRoutes=require("./routes/product")
 require("dotenv").config();
 // Middleware
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: ["https://trendtoken.vercel.app"], // Add your frontend URL here
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();
