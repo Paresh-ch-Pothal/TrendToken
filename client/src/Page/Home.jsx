@@ -256,8 +256,8 @@ const Home = () => {
       <div className="products-container">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <div key={product._id} className="product-card" onClick={() => { visitProductPage(product._id) }}>
-              <img src={product.imgLink} alt={product.name} />
+            <div key={product._id} className="product-card" >
+              <img src={product.imgLink} alt={product.name} onClick={() => { visitProductPage(product._id) }}/>
               <h3>{product.name}</h3>
               <div className="tag-btn">
                 {product.tag.map((t, index) => (
