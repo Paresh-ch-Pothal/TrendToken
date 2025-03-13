@@ -217,76 +217,79 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      {/* Header Section */}
-      <header className="header">
-        <h1>TrendtoKEN</h1>
-        <p>Discover the latest products in one place!</p>
-      </header>
+    <>
+      <div className="home-container">
+        {/* Header Section */}
+        <header className="header">
+          <h1>TrendtoKEN</h1>
+          <p>Discover the latest products in one place!</p>
+        </header>
 
-      {/* Categories & Search */}
-      <div className="filter-section">
-        <div className="categories">
-          <button
-            className={`category-btn ${selectedCategory === "All" ? "active" : ""}`}
-            onClick={() => setSelectedCategory("All")}
-          >
-            All
-          </button>
-          {tags.map((tag, index) => (
+        {/* Categories & Search */}
+        <div className="filter-section">
+          <div className="categories">
             <button
-              key={index}
-              className={`category-btn ${selectedCategory === tag ? "active" : ""}`}
-              onClick={() => setSelectedCategory(tag)}
+              className={`category-btn ${selectedCategory === "All" ? "active" : ""}`}
+              onClick={() => setSelectedCategory("All")}
             >
-              {tag}
+              All
             </button>
-          ))}
+            {tags.map((tag, index) => (
+              <button
+                key={index}
+                className={`category-btn ${selectedCategory === tag ? "active" : ""}`}
+                onClick={() => setSelectedCategory(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+          <input
+            type="text"
+            placeholder="Search for products..."
+            className="search-bar"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
-        <input
-          type="text"
-          placeholder="Search for products..."
-          className="search-bar"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
 
-      {/* Products Section */}
-      <div className="products-container">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div key={product._id} className="product-card" >
-              <img src={product.imgLink} alt={product.name} onClick={() => { visitProductPage(product._id) }}/>
-              <h3>{product.name}</h3>
-              <div className="tag-btn">
-                {product.tag.map((t, index) => (
-                  <button
-                    key={index}
-                    className={`category-btn-pr ${selectedCategory === t ? "active" : ""}`}
-                    onClick={() => setSelectedCategory(t)}
-                  >
-                    {t}
+        {/* Products Section */}
+        <div className="products-container">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div key={product._id} className="product-card" >
+                <img src={product.imgLink} alt={product.name} onClick={() => { visitProductPage(product._id) }} />
+                <h3>{product.name}</h3>
+                <div className="tag-btn">
+                  {product.tag.map((t, index) => (
+                    <button
+                      key={index}
+                      className={`category-btn-pr ${selectedCategory === t ? "active" : ""}`}
+                      onClick={() => setSelectedCategory(t)}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+                <p className="desc">{product.description.slice(0, 30)}...</p>
+
+                <div className="btn-grp">
+                  <button className="buy-btn" onClick={() => handleBuyNow(product.buyLink)}>
+                    Buy Now
                   </button>
-                ))}
+                  <button className="buy-btn" onClick={() => handleCopyLink(product.buyLink)}>
+                    Copy Link
+                  </button>
+                </div>
               </div>
-              <p className="desc">{product.description.slice(0, 30)}...</p>
-
-              <div className="btn-grp">
-                <button className="buy-btn" onClick={() => handleBuyNow(product.buyLink)}>
-                  Buy Now
-                </button>
-                <button className="buy-btn" onClick={() => handleCopyLink(product.buyLink)}>
-                  Copy Link
-                </button>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="no-products">No products found.</p>
-        )}
+            ))
+          ) : (
+            <p className="no-products">No products found.</p>
+          )}
+        </div>
       </div>
-    </div>
+      
+    </>
   );
 };
 

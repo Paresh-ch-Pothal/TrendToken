@@ -1,0 +1,38 @@
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  .footer-text {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .blog-link {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .blog-link:hover {
+    color: #ffa500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .footer {
+      font-size: 14px;
+      padding: 15px;
+    }
+  
+    .footer-text {
+      font-size: 16px;
+    }
+  }
+  

@@ -10,6 +10,8 @@ import ProductPage from './Page/ProductPage'
 import About from './Page/About'
 import PrivacyPolicy from './Page/PrivacyPolicy'
 import CreatePage from './Page/CreatePage'
+import Footer from './Page/Footer'
+import NewsTicker from './Page/NewsTicker'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +20,7 @@ function App() {
     <>
       <Router>
       <Navbar />
+      <NewsTicker/>
       
       <Routes>
         {/* Show Welcome only on Home */}
@@ -31,6 +34,7 @@ function App() {
         {/* Add more routes here */}
         {/* Example: <Route path="/about" element={<About />} /> */}
       </Routes>
+      <Footer/>
     </Router>
 
 
