@@ -16,6 +16,17 @@ const Footer = () => {
             visit my blog!
           </a>
         </p>
+        <p className="footer-text">
+          Get Updated With The Latest Trends,  
+          <a 
+            href="https://t.me/trendTokend" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="blog-link"
+          >
+            Join Telegram!
+          </a>
+        </p>
       </footer>
     );
   };

@@ -5,19 +5,26 @@ import "../CSS/newsticker.css"; // Importing external CSS
 const NewsTicker = () => {
   const news = [
     "🔥 Breaking: AI is taking over the world!",
-    "📢 New JavaScript framework released!",
-    "🚀 SpaceX launches another rocket successfully!",
-    "💡 TechTip: Learn React for modern web development!",
-    "📊 Bitcoin hits a new all-time high!",
     <span key="blog-button">
-      📝 Stay updated with the latest trends!  
-      <a 
-        href="https://trendtoken.blogspot.com/" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      📝 Stay updated with the latest news!
+      <a
+        href="https://trendtoken.blogspot.com/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="blog-button"
       >
         Visit My Blog
+      </a>
+    </span>,
+    <span key="blog-button">
+      📝 Stay updated with the latest trends!
+      <a
+        href="hhttps://t.me/trendTokend"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="blog-button"
+      >
+        Join Telegram
       </a>
     </span>
   ];
