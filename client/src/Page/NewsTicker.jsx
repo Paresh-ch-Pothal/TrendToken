@@ -19,7 +19,7 @@ const NewsTicker = () => {
     <span key="blog-button">
       📝 Stay updated with the latest trends!
       <a
-        href="hhttps://t.me/trendTokend"
+        href="https://t.me/trendTokend"
         target="_blank"
         rel="noopener noreferrer"
         className="blog-button"
